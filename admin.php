@@ -1,4 +1,11 @@
+<video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+  <source src="clouds.mp4" type="video/mp4">
+</video>
 <?php
+session_start();
+if (isset($_SESSION['status'])){
+$nama   = $_SESSION['nama'];
+$jabatan = $_SESSION['jabatan'];
 include("koneksi.php");
 ?>
 <!DOCTYPE html>
@@ -13,6 +20,20 @@ include("koneksi.php");
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
+<style>
+#background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+</style>
+
 <body>
     <div class="container">
         <div class="row">
@@ -70,6 +91,7 @@ include("koneksi.php");
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
+                        <a href="?page=input"><button class= "btn btn-danger">Logout</button></a>
                         </div>
                     </div>
                     </nav>
@@ -89,8 +111,18 @@ include("koneksi.php");
                             include('anggota-delete.php');
                         }elseif ($_GET['page'] == 'anggota-insert') {
                             include('anggota-insert.php');
+                        }elseif ($_GET['page'] == 'anggota-edit-proses') {
+                            include('anggota-edit-proses.php');
+                        }elseif ($_GET['page'] == 'anggota-edit') {
+                            include('anggota-edit.php');
+                        }elseif ($_GET['page'] == 'logout') {
+                            include('logout.php'); 
                         }
+                    }else{
+                        echo "<br><br><center><h1> Selamat Datang $nama</h1></center></br></br>";
+                        echo "<h1><center> Selamat Datang $jabatan</center></h1>";
                     }
+            
                 ?>
             </div>
         </div>
@@ -98,3 +130,11 @@ include("koneksi.php");
     <script src="bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+<?php
+}else{
+    ?>
+    <script>
+    window.location.href='http://localhost/23_mywebsite_12RPL2/admin.php?page=anggota';
+    </script>
+    <?php
+}
