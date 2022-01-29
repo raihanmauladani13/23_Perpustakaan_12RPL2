@@ -26,9 +26,12 @@
                 <label for="">Nama</label>
                 <input value="<?php echo $row['nama'] ?>" class="form-control" type="text" name="nama" placeholder="Nama Lengkap" required>
             </div>
-            <div class="form-group">
-                <label for="">Jabatan</label>
-                <input value="<?php echo $row['jabatan'] ?>" class="form-control" type="text" name="jabatan" placeholder="jabatan" required>
+            <div class="form-group mt-2">
+               <select class="form-control" name="jabatan">
+                  <option value="">--Pilih Jabatan--</option>
+                  <option value="Kepala Perpustakaan"> Kepala Perpustakaan</option>
+                  <option value="Petugas">Petugas</option>
+                </select>
             </div>
             <div class="form-group mt-2">
                 <label for="">Nomor Telepon</label>
