@@ -1,3 +1,6 @@
+<video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+  <source src="1.mp4" type="video/mp4">
+</video>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,16 +9,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
     <style>
-        html,body{
+        /* html,body{
             width:100%;
-            background:#885561;
-        }
+            background:;
+        } */
+        #background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
         .login-container{
             width:350px;
             margin:100px auto auto auto;
             border:solid 5px;
             padding:30px;
-            background:lightgreen;
+            background:#EAB46E;
             border-radius:10px;
         }
         .title{
