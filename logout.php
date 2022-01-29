@@ -1,9 +1,8 @@
 <?php
-//session_start();
+session_start();
 session_destroy();
-header("location='http://localhost/23_mywebsite_12RPL2/'")
 ?>
 <script>
-    alert('Anda berhasil Logout');
-    window.location.href='http://localhost/23_mywebsite_12RPL2/';
+    // alert('Anda berhasil Logout');
+    window.location.href='http://localhost/23_website_12RPL2';
 </script>

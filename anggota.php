@@ -35,8 +35,8 @@ Tambah Data
         <td valign="middle"><?php echo $row['nomor_telepon']; ?></td>
         <td align="center" valign="middle"><?php echo $row['alamat']; ?></td>
         <td valign="middle">
-        <a href="?page=anggota-delete&id=&i=<?php echo $row['id_anggota'];?>">
-            <button class="btn btn-danger"><i class="fas fa-trash-alt">Hapus</i></button>
+        <a href="?page=anggota-delete&hapus&id=<?php echo $row['id_anggota'];?>">
+            <button name="hapus" class="btn btn-danger"><i class="fas fa-trash-alt">Hapus</i></button>
         </a>
         <a href="?page=anggota-edit&edit&id=<?php echo $row['id_anggota'];?>">
             <button class="btn btn-warning"><i class="fas fa-edit">Update</i></button>
@@ -115,7 +115,7 @@ Tambah Data
             </div>
 
             <div class="form-group mt-2">
-              <input class="form-control" type="text" name="nomor_telepon" placeholder=" No Telepon" require>
+              <input class="form-control" type="text" name="nomor_telepon" placeholder="No Telepon" require>
             </div>
 
             <div class="form-group mt-2">

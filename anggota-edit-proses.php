@@ -29,7 +29,7 @@ if($query_update)
                 Data Berhasil Diupdate !!!
             </div>
         <?php
-        ('refresh:3; URL=http://localhost/23_mywebsite_12RPL2/admin.php?page=anggota');
+        ('refresh:3; URL=http://localhost/23_website_12RPL2/admin.php?page=anggota');
     }
     else
     {

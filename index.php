@@ -83,29 +83,36 @@ include('koneksi.php');
         $username= $_POST['username'];
         $password=$_POST['password'];
 
-        $query= mysqli_query($koneksi,"SELECT * from petugas where username='".$_POST['username']."' && password='".
-        $_POST['password']."'");
+        $query= mysqli_query($koneksi,"SELECT * from petugas where username = '$username'");
         foreach ($query as $row){
-        $nama = $row['nama'];
-        $jabatan = $row['jabatan'];
+        $nama       = $row['nama'];
+        $jabatan    = $row['jabatan'];
+        $hash       = $row['password'];
         }
         // if(($user == $_POST['username'])&& ($katasandi == $_POST['password'])){
         if(mysqli_num_rows($query)>0){
-            session_start();
-            $_SESSION['status'] = "login";
-            $_SESSION['nama'] = "$nama";
-            $_SESSION['jabatan'] = "$jabatan";
+            ////////////////////////////////////////////
+            if (password_verify($password, $hash)) {
+                session_start();
+                $_SESSION['status'] = "login";
+                $_SESSION['nama'] = "$nama";
+                $_SESSION['jabatan'] = "$jabatan";
+                
+                ?>
+                <script>
+                    alert("username/password Benar");
+                    window.location.href='http://localhost/23_website_12RPL2/admin.php';
+                </script>
+                <?php
+            } else {
+                echo 'Invalid password.';
+            }
+            /////////////////////////////////////////////
             
-            header('location:admin.php');
-        }else{
-            ?>
-            <script>
-                alert("username/password salah")
-            </script>
-            <?php
             
         } 
     }
+
 ?>
  
         

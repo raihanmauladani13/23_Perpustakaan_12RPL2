@@ -67,7 +67,7 @@ include("koneksi.php");
                             <a class="nav-link" href="?page=home">Home</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" href="?page=user">User</a>
+                            <a class="nav-link" href="?page=petugas">Petugas</a>
                             </li>
                             <li class="nav-item">
                             <a class="nav-link" href="?page=anggota">Anggota</a>
@@ -91,7 +91,7 @@ include("koneksi.php");
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
-                        <a href="?page=input"><button class= "btn btn-danger">Logout</button></a>
+                        <a href="?page=logout"><button class= "btn btn-danger">Logout</button></a>
                         </div>
                     </div>
                     </nav>
@@ -117,6 +117,16 @@ include("koneksi.php");
                             include('anggota-edit.php');
                         }elseif ($_GET['page'] == 'logout') {
                             include('logout.php'); 
+                        }elseif ($_GET['page'] == 'petugas') {
+                            include('petugas.php');
+                        }elseif ($_GET['page'] == 'petugas-delete') {
+                            include('petugas-delete.php');
+                        }elseif ($_GET['page'] == 'petugas-insert') {
+                            include('petugas-insert.php');
+                        }elseif ($_GET['page'] == 'petugas-edit-proses') {
+                            include('petugas-edit-proses.php');
+                        }elseif ($_GET['page'] == 'petugas-edit') {
+                            include('petugas-edit.php');
                         }
                     }else{
                         echo "<br><br><center><h1> Selamat Datang $nama</h1></center></br></br>";
@@ -134,7 +144,7 @@ include("koneksi.php");
 }else{
     ?>
     <script>
-    window.location.href='http://localhost/23_mywebsite_12RPL2/admin.php?page=anggota';
+    window.location.href='http://localhost/23_website_12RPL2/admin.php?page=anggota';
     </script>
     <?php
 }
