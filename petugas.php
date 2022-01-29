@@ -56,8 +56,12 @@ Tambah Data
             <div class="form-group">
               <input class="form-control" type="text" name="nama" placeholder="Nama Petugas" require>
             </div>
-            <div class="form-group">
-              <input class="form-control" type="text" name="jabatan" placeholder="jabatan" require>
+            <div class="form-group mt-2">
+               <select class="form-control" name="jabatan">
+                  <option value="">--Pilih Jabatan--</option>
+                  <option value="Kepala Perpustakaan"> Kepala Perpustakaan</option>
+                  <option value="Petugas">Petugas</option>
+                </select>
             </div>
             <div class="form-group mt-2">
               <input class="form-control" type="text" name="nomor_telepon" placeholder="nomor_telepon" require>
