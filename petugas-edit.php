@@ -30,7 +30,7 @@
                <select class="form-control" name="jabatan">
                   <option value="">--Pilih Jabatan--</option>
                   <option value="Kepala Perpustakaan"> Kepala Perpustakaan</option>
-                  <option value="Petugas">Petugas</option>
+                  <option value="Pustakawan">Pustakawan</option>
                 </select>
             </div>
             <div class="form-group mt-2">
