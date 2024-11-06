@@ -1,8 +1,8 @@
 <?php
- $namaserver  ="localhost";
+ $namaserver  ="";
  $namauser="root";
  $katasandi="";
- $nama_db="mauladani_23";
+ $nama_db="";
 
  $koneksi = mysqli_connect($namaserver,$namauser,$katasandi,$nama_db);
 
