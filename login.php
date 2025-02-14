@@ -73,8 +73,8 @@
 <?php
 include('koneksi.php');
 
-    // $user ="joko";
-    // $katasandi="1234";
+    // $user ="";
+    // $katasandi="";
     
     
 
